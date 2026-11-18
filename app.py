@@ -18,9 +18,6 @@ name = st.text_input("Student Name", placeholder="Enter your name")
 # Roll Number
 roll_no = st.text_input("Roll Number", placeholder="Enter roll number")
 
-# USN
-usn = st.text_input("USN", placeholder="Enter your USN")
-
 # Department
 department = st.selectbox(
     "Department",
@@ -46,6 +43,5 @@ if st.button("View My Profile"):
 
         st.write("Name:", html.escape(name))
         st.write("Roll Number:", html.escape(roll_no))
-        st.write("USN:", html.escape(usn))
         st.write("Department:", department)
         st.write("Year:", year)
