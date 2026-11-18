@@ -50,7 +50,7 @@ if st.button("View My Profile"):
 
         st.write("### Student Profile")
 
-        st.write("**Name:**", name)
-        st.write("**Roll Number:**", roll_number)
-        st.write("**Department:**", department)
-        st.write("**Year:**", year)
+        st.write("**Name:**", AKSHATA)
+        st.write("**Roll Number:**", 1SV24CS005)
+        st.write("**Department:**",CSE)
+        st.write("**Year:**", 3RD YEAR)
