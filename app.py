@@ -37,7 +37,7 @@ year = st.radio(
 if st.button("View My Profile"):
 
     if not name.strip() or not roll_no.strip() or not usn.strip():
-        st.warning("Please enter all student details.")
+        st.error("Please enter all student details.")
 
     else:
         st.success("Profile submitted successfully!")
