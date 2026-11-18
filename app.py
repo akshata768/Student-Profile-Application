@@ -14,14 +14,11 @@ st.caption("Developed by AKSHATA")
 st.info("Fill in your details and click View My Profile.")
 
 # Student Name
-name = st.text_input("Student Name", placeholder="Enter your name")
+name = st.text_input("Student Name", placeholder="akshata")
 
 # Roll Number
-roll_no = st.text_input("Roll Number", placeholder="Enter roll number")
-
-# USN
-usn = st.text_input("USN", placeholder="Enter your USN")
-
+roll_no = st.text_input("Roll Number", placeholder="xxxxxx")
+year = st.text_input("YEAR", placeholder="3rd year")
 # Department
 department = st.selectbox(
     "Department",
@@ -47,6 +44,5 @@ if st.button("View My Profile"):
 
         st.write("Name:", html.escape(name))
         st.write("Roll Number:", html.escape(roll_no))
-        st.write("USN:", html.escape(usn))
         st.write("Department:", department)
         st.write("Year:", year)
