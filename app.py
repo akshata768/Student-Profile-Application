@@ -1,4 +1,5 @@
 import streamlit as st
+import html
 
 st.set_page_config(
     page_title="Student Profile Application",
@@ -6,82 +7,45 @@ st.set_page_config(
     layout="centered"
 )
 
-# Custom CSS
-st.markdown("""
-<style>
-.stApp {
-    background-color: black;
-    color: white;
-}
-.block-container {
-    max-width: 850px;
-    padding-top: 2rem;
-}
-.profile-card {
-    background: #050505;
-    border: 1px solid #292929;
-    border-radius: 28px;
-    padding: 30px;
-}
-.stButton > button {
-    background: white;
-    color: black;
-    border-radius: 30px;
-    padding: 10px 25px;
-}
-</style>
-""", unsafe_allow_html=True)
+st.title("🎓 Student Profile Application")
+st.caption("Developed by AKSHATA")
 
-# Application heading
-st.markdown("## 🎓 Student Profile Application")
+st.info("Fill in your details and click View My Profile.")
 
-st.write("Developed by Bhavana S O")
+# Student Name
+name = st.text_input("Student Name", placeholder="Enter your name")
 
-st.info(
-    "Fill in your details and click View My Profile."
+# Roll Number
+roll_no = st.text_input("Roll Number", placeholder="Enter roll number")
+
+# USN
+usn = st.text_input("USN", placeholder="Enter your USN")
+
+# Department
+department = st.selectbox(
+    "Department",
+    ["CSE", "ISE", "ECE", "EEE", "ME", "CIVIL", "AIML"]
 )
 
-# Student details
-with st.form("student_form"):
+# Current Year
+year = st.radio(
+    "Current Year",
+    ["1st Year", "2nd Year", "3rd Year", "4th Year"]
+)
 
-    name = st.text_input(
-        "Student Name",
-        placeholder="Enter your name"
-    )
+# View My Profile
+if st.button("View My Profile"):
 
-    usn = st.text_input(
-        "USN / Roll Number",
-        placeholder="Enter roll number"
-    )
-
-    department = st.selectbox(
-        "Department",
-        ["CSE", "ISE", "ECE", "EEE",
-         "ME", "CIVIL", "AIML", "Other"]
-    )
-
-    year = st.radio(
-        "Current Year",
-        ["1st Year", "2nd Year",
-         "3rd Year", "4th Year"]
-    )
-
-    submit = st.form_submit_button(
-        "View My Profile"
-    )
-
-# Display profile
-if submit:
-
-    if name.strip() == "" or usn.strip() == "":
-        st.error("Please enter all details.")
+    if not name.strip() or not roll_no.strip() or not usn.strip():
+        st.warning("Please enter all student details.")
 
     else:
-        st.success("Profile Created Successfully!")
+        st.success("Profile submitted successfully!")
 
-        st.subheader("Student Profile")
+        st.write("### Student Profile")
 
-        st.write("**Student Name:**", name)
-        st.write("**USN / Roll Number:**", usn)
-        st.write("**Department:**", department)
-        st.write("**Current Year:**", year)
+        st.write("Name:", html.escape(name))
+        st.write("Roll Number:", html.escape(roll_no))
+        st.write("USN:", html.escape(usn))
+        st.write("Department:", department)
+        st.write("Year:", year)
