@@ -19,7 +19,6 @@ name = st.text_input("Student Name", placeholder="akshata")
 # Roll Number
 roll_no = st.text_input("Roll Number", placeholder="xxxxxx")
 year = st.text_input("Year", placeholder="3rd year")
-department = st.text_input("Department", placeholder="cse")
 
 
 # Department
