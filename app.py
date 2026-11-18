@@ -18,7 +18,10 @@ name = st.text_input("Student Name", placeholder="akshata")
 
 # Roll Number
 roll_no = st.text_input("Roll Number", placeholder="xxxxxx")
-year = st.text_input("YEAR", placeholder="3rd year")
+year = st.text_input("Year", placeholder="3rd year")
+department = st.text_input("Department", placeholder="cse")
+
+
 # Department
 department = st.selectbox(
     "Department",
@@ -42,7 +45,7 @@ if st.button("View My Profile"):
 
         st.write("### Student Profile")
 
-        st.write("Name:", html.escape(name))
-        st.write("Roll Number:", html.escape(roll_no))
-        st.write("Department:", department)
-        st.write("Year:", year)
+        st.write("AKSHATA:", html.escape(name))
+        st.write("XXXXXX:", html.escape(roll_no))
+        st.write("CSE:", department)
+        st.write("3RD YEAR:", year)
